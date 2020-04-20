@@ -23,3 +23,4 @@ def rasterize(world, rst_fn, out_fn):
 # rst_fn = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Example_SAT1950.tif'
 # Файл, в который будем сохранять растровый слой
 # out_fn = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/world_rasterized.tif'
+# rasterize(world, rst_fn, out_fn)
