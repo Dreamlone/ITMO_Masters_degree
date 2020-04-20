@@ -283,12 +283,12 @@ def save_netCDF(tensor, timesteps, save_path, countries_tif, land_tif):
 #save_netCDF(transformed_matrix, timesteps, '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Processed_grid/Temperature_SAT.nc',
 #            countries_tif = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Country_bounds.tif',
 #            land_tif = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/LandMatrix.tif')
-
+#
 # Минимальная температура воздуха, встречавшаяся за первые полгода
-transformed_matrix, timesteps = transform_grid(path = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe', matrix_name = "tn_ens_mean_0.1deg_reg_v20.0e.nc")
-save_netCDF(transformed_matrix, timesteps, '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Processed_grid/Temperature_min.nc',
-            countries_tif = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Country_bounds.tif',
-            land_tif = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/LandMatrix.tif')
+#transformed_matrix, timesteps = transform_grid(path = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe', matrix_name = "tn_ens_mean_0.1deg_reg_v20.0e.nc")
+#save_netCDF(transformed_matrix, timesteps, '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Processed_grid/Temperature_min.nc',
+#            countries_tif = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Country_bounds.tif',
+#            land_tif = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/LandMatrix.tif')
 
 
 
