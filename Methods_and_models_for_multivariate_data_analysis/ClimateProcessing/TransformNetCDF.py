@@ -255,34 +255,34 @@ def save_netCDF(tensor, timesteps, save_path, countries_tif, land_tif):
 #                                                                --- --- --- Применение алгоритма --- --- ---                                                                  #
 
 # Количество дней с осадками за первое полугодие
-transformed_matrix, timesteps = transform_grid(path = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe', matrix_name = "rr_ens_mean_0.1deg_reg_v20.0e.nc", calculate_days = True)
-save_netCDF(transformed_matrix, timesteps, '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Processed_grid/Precip_days.nc',
-            countries_tif = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Country_bounds.tif',
-            land_tif = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/LandMatrix.tif')
-
+#transformed_matrix, timesteps = transform_grid(path = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe', matrix_name = "rr_ens_mean_0.1deg_reg_v20.0e.nc", calculate_days = True)
+#save_netCDF(transformed_matrix, timesteps, '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Processed_grid/Precip_days.nc',
+#            countries_tif = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Country_bounds.tif',
+#            land_tif = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/LandMatrix.tif')
+#
 # Сумма осадков за первое полугодие
-transformed_matrix, timesteps = transform_grid(path = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe', matrix_name = "rr_ens_mean_0.1deg_reg_v20.0e.nc")
-save_netCDF(transformed_matrix, timesteps, '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Processed_grid/Precip_amount.nc',
-            countries_tif = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Country_bounds.tif',
-            land_tif = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/LandMatrix.tif')
-
+#transformed_matrix, timesteps = transform_grid(path = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe', matrix_name = "rr_ens_mean_0.1deg_reg_v20.0e.nc")
+#save_netCDF(transformed_matrix, timesteps, '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Processed_grid/Precip_amount.nc',
+#            countries_tif = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Country_bounds.tif',
+#            land_tif = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/LandMatrix.tif')
+#
 # Среднее поле давления за первые полгода
-transformed_matrix, timesteps = transform_grid(path = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe', matrix_name = "pp_ens_mean_0.1deg_reg_v20.0e.nc")
-save_netCDF(transformed_matrix, timesteps, '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Processed_grid/Pressure_mean.nc',
-            countries_tif = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Country_bounds.tif',
-            land_tif = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/LandMatrix.tif')
-
+#transformed_matrix, timesteps = transform_grid(path = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe', matrix_name = "pp_ens_mean_0.1deg_reg_v20.0e.nc")
+#save_netCDF(transformed_matrix, timesteps, '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Processed_grid/Pressure_mean.nc',
+#            countries_tif = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Country_bounds.tif',
+#            land_tif = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/LandMatrix.tif')
+#
 # Максимальная температура воздуха, встречавшаяся за первые полгода
-transformed_matrix, timesteps = transform_grid(path = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe', matrix_name = "tx_ens_mean_0.1deg_reg_v20.0e.nc")
-save_netCDF(transformed_matrix, timesteps, '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Processed_grid/Temperature_max.nc',
-            countries_tif = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Country_bounds.tif',
-            land_tif = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/LandMatrix.tif')
-
+#transformed_matrix, timesteps = transform_grid(path = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe', matrix_name = "tx_ens_mean_0.1deg_reg_v20.0e.nc")
+#save_netCDF(transformed_matrix, timesteps, '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Processed_grid/Temperature_max.nc',
+#            countries_tif = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Country_bounds.tif',
+#            land_tif = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/LandMatrix.tif')
+#
 # Сумма активных температур выше 10 градусов
-transformed_matrix, timesteps = transform_grid(path = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe', matrix_name = "tg_ens_mean_0.1deg_reg_v20.0e.nc")
-save_netCDF(transformed_matrix, timesteps, '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Processed_grid/Temperature_SAT.nc',
-            countries_tif = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Country_bounds.tif',
-            land_tif = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/LandMatrix.tif')
+#transformed_matrix, timesteps = transform_grid(path = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe', matrix_name = "tg_ens_mean_0.1deg_reg_v20.0e.nc")
+#save_netCDF(transformed_matrix, timesteps, '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Processed_grid/Temperature_SAT.nc',
+#            countries_tif = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Country_bounds.tif',
+#            land_tif = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/LandMatrix.tif')
 
 # Минимальная температура воздуха, встречавшаяся за первые полгода
 transformed_matrix, timesteps = transform_grid(path = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe', matrix_name = "tn_ens_mean_0.1deg_reg_v20.0e.nc")
