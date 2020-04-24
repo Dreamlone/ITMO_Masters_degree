@@ -63,6 +63,8 @@ def aggregate_by_country(country, netCDf_dir, crop_data, fertilizer_data, tracto
             # Матрица с типами ландшафтов
             land_matrix = np.array(dataset.variables['biome'])
             # В случае типов ландшафтов нас интересуют следующие значения:
+            # 11 - Post-flooding or irrigated croplands (or aquatic)
+            # 14 - Rainfed croplands
             # 20 - Mosaic cropland (50-70%) / vegetation (grassland/shrubland/forest) (20-50%)
             # 30 - Mosaic vegetation (grassland/shrubland/forest) (50-70%) / cropland (20-50%)
 
@@ -73,10 +75,12 @@ def aggregate_by_country(country, netCDf_dir, crop_data, fertilizer_data, tracto
             indices_c = np.argwhere(countries == id_country)
 
             # Для каких биомов нам требуется получать значения
+            indices_11 = np.argwhere(land_matrix == 11)
+            indices_14 = np.argwhere(land_matrix == 14)
             indices_20 = np.argwhere(land_matrix == 20)
             indices_30 = np.argwhere(land_matrix == 30)
             # Объединяем списки с индексами нужных нам биомов
-            indices_num = np.vstack((indices_20, indices_30))
+            indices_num = np.vstack((indices_11, indices_14, indices_20, indices_30))
 
             # Сформируем вектора со значениями координат в виде строк
             str_indices_num = []
@@ -245,26 +249,26 @@ def aggregate_by_country(country, netCDf_dir, crop_data, fertilizer_data, tracto
 
 
 # Подготовим датасеты по следующим странам
-#aggregate_by_country(country = 'Germany', netCDf_dir = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Processed_grid',
-#                     crop_data = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Crop_yields_info.csv',
-#                     fertilizer_data = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Cereal_crop_yield_vs_fertilizer_application.csv',
-#                     tractor_data = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Cereal_yields_vs_tractor_inputs_in_agriculture.csv',
-#                     land_data = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Index_of_cereal_production_yield_and_land_use.csv')
+# aggregate_by_country(country = 'Germany', netCDf_dir = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Processed_grid',
+#                      crop_data = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Crop_yields_info.csv',
+#                      fertilizer_data = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Cereal_crop_yield_vs_fertilizer_application.csv',
+#                      tractor_data = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Cereal_yields_vs_tractor_inputs_in_agriculture.csv',
+#                      land_data = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Index_of_cereal_production_yield_and_land_use.csv')
 #
-#aggregate_by_country(country = 'France', netCDf_dir = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Processed_grid',
-#                     crop_data = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Crop_yields_info.csv',
-#                     fertilizer_data = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Cereal_crop_yield_vs_fertilizer_application.csv',
-#                     tractor_data = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Cereal_yields_vs_tractor_inputs_in_agriculture.csv',
-#                     land_data = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Index_of_cereal_production_yield_and_land_use.csv')
+# aggregate_by_country(country = 'France', netCDf_dir = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Processed_grid',
+#                      crop_data = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Crop_yields_info.csv',
+#                      fertilizer_data = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Cereal_crop_yield_vs_fertilizer_application.csv',
+#                      tractor_data = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Cereal_yields_vs_tractor_inputs_in_agriculture.csv',
+#                      land_data = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Index_of_cereal_production_yield_and_land_use.csv')
 #
-#aggregate_by_country(country = 'Italy', netCDf_dir = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Processed_grid',
-#                     crop_data = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Crop_yields_info.csv',
-#                     fertilizer_data = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Cereal_crop_yield_vs_fertilizer_application.csv',
-#                     tractor_data = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Cereal_yields_vs_tractor_inputs_in_agriculture.csv',
-#                     land_data = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Index_of_cereal_production_yield_and_land_use.csv')
+# aggregate_by_country(country = 'Italy', netCDf_dir = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Processed_grid',
+#                      crop_data = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Crop_yields_info.csv',
+#                      fertilizer_data = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Cereal_crop_yield_vs_fertilizer_application.csv',
+#                      tractor_data = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Cereal_yields_vs_tractor_inputs_in_agriculture.csv',
+#                      land_data = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Index_of_cereal_production_yield_and_land_use.csv')
 #
-#aggregate_by_country(country = 'Romania', netCDf_dir = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Processed_grid',
-#                     crop_data = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Crop_yields_info.csv',
-#                     fertilizer_data = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Cereal_crop_yield_vs_fertilizer_application.csv',
-#                     tractor_data = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Cereal_yields_vs_tractor_inputs_in_agriculture.csv',
-#                     land_data = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Index_of_cereal_production_yield_and_land_use.csv')
+# aggregate_by_country(country = 'Romania', netCDf_dir = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Processed_grid',
+#                      crop_data = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Crop_yields_info.csv',
+#                      fertilizer_data = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Cereal_crop_yield_vs_fertilizer_application.csv',
+#                      tractor_data = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Cereal_yields_vs_tractor_inputs_in_agriculture.csv',
+#                      land_data = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Index_of_cereal_production_yield_and_land_use.csv')
