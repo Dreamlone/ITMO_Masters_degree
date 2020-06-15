@@ -1,4 +1,4 @@
-# Prediction of yields and Futures price of crops in Europe using climate data
+# Prediction of yields and Futures price of crops in Europe using various data sources
 
 Team MiECa:
 - Mikhail Sarafanov
