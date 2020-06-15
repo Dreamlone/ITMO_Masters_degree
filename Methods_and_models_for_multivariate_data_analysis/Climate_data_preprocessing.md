@@ -23,12 +23,12 @@ The source archives obtained from the European space Agency website contain netC
 - Precipitation, mm
 
 Based on the initial parameters, indicators for the first half of each year were calculated:
-- 1) Precip_amount - total rainfall for the first half of the year, mm
-- 2) Precip_days - the number of days with precipitation for the first half of the year, days
-- 3) Pressure_mean - average pressure, hpa
-- 4) Temperature_max - maximum average daily air temperature for the first six months, ℃
-- 5) Temperature_min - the minimum average daily temperature for the first six months, ℃
-- 6) Temperature_SAT - the sum of active temperatures above 10 degrees Celsius, ℃
+- Precip_amount - total rainfall for the first half of the year, mm
+- Precip_days - the number of days with precipitation for the first half of the year, days
+- Pressure_mean - average pressure, hpa
+- Temperature_max - maximum average daily air temperature for the first six months, ℃
+- Temperature_min - the minimum average daily temperature for the first six months, ℃
+- Temperature_SAT - the sum of active temperatures above 10 degrees Celsius, ℃
 
 An example of an algorithm for calculating the sum of active temperatures above 10 degrees Celsius can be seen below:
 ![Data_preparation.png](https://raw.githubusercontent.com/Dreamlone/ITMO_Masters_degree/master/Images/img_1.png)
