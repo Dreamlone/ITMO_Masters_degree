@@ -38,7 +38,7 @@ As a result of these conversions, fields with attribute values for each year wer
 
 An algorithm is used to implement the above actions:
 
-#### [TransformNetCDF](https://github.com/Dreamlone/ITMO_Masters_degree/blob/master/Methods_and_models_for_multivariate_data_analysis/ClimateProcessing/TransformNetCDF.py)
+#### [TransformNetCDF](https://github.com/Dreamlone/ITMO_Masters_degree/blob/master/Big_Data/CourseProject/Source_code/TransformNetCDF.py)
 
 To speed up the runtime, a powerful library for parallelizing calculations is used - Dask.
 
@@ -97,7 +97,7 @@ The received information about climate parameters is aggregated by country. Data
 
 An algorithm is used to create a bitmap with countries:
 
-#### [Rasterizer](https://github.com/Dreamlone/ITMO_Masters_degree/blob/master/Methods_and_models_for_multivariate_data_analysis/ClimateProcessing/Rasterizer.py)
+#### [Rasterizer](https://github.com/Dreamlone/ITMO_Masters_degree/blob/master/Big_Data/CourseProject/Source_code/Rasterizer.py)
 
 The input data is a vector layer with state borders and a matrix to copy the resolution and spatial reference from. The result is a bitmap image in geotiff format.
 
@@ -120,7 +120,7 @@ In order to take into account only information that relates to agricultural land
 
 An algorithm was used to combine data into tables for analysis
 
-#### [MergeForm](https://github.com/Dreamlone/ITMO_Masters_degree/blob/master/Methods_and_models_for_multivariate_data_analysis/ClimateProcessing/MergeForm.py)
+#### [MergeForm](https://github.com/Dreamlone/ITMO_Masters_degree/blob/master/Big_Data/CourseProject/Source_code/MergeForm.py)
 
 
 
@@ -165,8 +165,7 @@ The parameters considered are: average daily air temperature, average air pressu
 
 Algorithm for preparing distributions in binary npy format
 
-#### [TransformNetCDF_distribution](https://github.com/Dreamlone/ITMO_Masters_degree/blob/master/Methods_and_models_for_multivariate_data_analysis/ClimateProcessing/TransformNetCDF_distribution.py)
-
+#### [TransformNetCDF_distribution](https://github.com/Dreamlone/ITMO_Masters_degree/blob/master/Big_Data/CourseProject/Source_code/TransformNetCDF_distribution.py)
 
 
 

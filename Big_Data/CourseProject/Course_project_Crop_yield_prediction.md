@@ -22,7 +22,7 @@ To forecast yields in September or October, information about the sum of active 
 ![Regression.png](https://raw.githubusercontent.com/Dreamlone/ITMO_Masters_degree/master/Images/img_6.png)
 
 The source code is presented here:
-#### [Prediction_regression](https://github.com/Dreamlone/ITMO_Masters_degree/blob/master/Methods_and_models_for_multivariate_data_analysis/PredictiveModels/Prediction_regression.py)
+#### [Prediction_regression](https://github.com/Dreamlone/ITMO_Masters_degree/blob/master/Big_Data/CourseProject/Source_code/Prediction_regression.py)
 
 
 
@@ -85,7 +85,7 @@ Calculation for comparing weather conditions:
 ![Distribution_2.png](https://raw.githubusercontent.com/Dreamlone/ITMO_Masters_degree/master/Images/img_8.png)
 
 The source code is presented here:
-#### [Prediction_distribution](https://github.com/Dreamlone/ITMO_Masters_degree/blob/master/Methods_and_models_for_multivariate_data_analysis/PredictiveModels/Prediction_distribution.py)
+#### [Prediction_distribution](https://github.com/Dreamlone/ITMO_Masters_degree/blob/master/Big_Data/CourseProject/Source_code/Prediction_distribution.py)
 
 
 ### Bayesian network
@@ -106,14 +106,14 @@ Using States of hydrometeorological parameters - selecting the yield state:
 
 
 The source code is presented here:
-#### [Prediction_markov](https://github.com/Dreamlone/ITMO_Masters_degree/blob/master/Methods_and_models_for_multivariate_data_analysis/PredictiveModels/Prediction_markov.py)
+#### [Prediction_markov](https://github.com/Dreamlone/ITMO_Masters_degree/blob/master/Big_Data/CourseProject/Source_code/Prediction_markov.py)
 
 ### Autoregressive Integrated Moving Average (ARIMA)
 
 The ARIMA yield forecast is more accurate than «Distribution analysis» and «Bayesian network» prediction.
 
 The source code is presented here:
-#### [ARIMA](https://github.com/Dreamlone/ITMO_Masters_degree/blob/master/Methods_and_models_for_multivariate_data_analysis/PredictiveModels/Prediction_ARIMA.py)
+#### [ARIMA](https://github.com/Dreamlone/ITMO_Masters_degree/blob/master/Big_Data/CourseProject/Source_code/Prediction_ARIMA.py)
 
 
 ### Algorithm ensembling
@@ -121,7 +121,7 @@ None of the presented algorithms allowed to overcome the 10% accuracy threshold 
 
 ![All_predictions.png](https://raw.githubusercontent.com/Dreamlone/ITMO_Masters_degree/master/Images/img_10.png)
 
-#### [Kalman](https://github.com/Dreamlone/ITMO_Masters_degree/blob/master/Methods_and_models_for_multivariate_data_analysis/PredictiveModels/Prediction_Kalman_ensemble.py)
+#### [Kalman](https://github.com/Dreamlone/ITMO_Masters_degree/blob/master/Big_Data/CourseProject/Source_code/Prediction_Kalman_ensemble.py)
 
 ### Results
 
