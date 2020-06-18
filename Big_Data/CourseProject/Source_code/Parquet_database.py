@@ -7,10 +7,10 @@ from netCDF4 import Dataset
 import shutil
 import dask.array as da
 
-########################################################################################################################
-# Скрипт для формирования parquet файла базы данных с информацией по странам об урожайности и климатических параметрах #
-#                                                  за разные годы                                                      #
-########################################################################################################################
+#########################################################################################################################
+# Функция для формирования parquet файла базы данных с информацией по странам об урожайности и климатических параметрах #
+#                                                  за разные годы                                                       #
+#########################################################################################################################
 # csv_path      --- папка с файлами csv, где хранятся все необходимые материалы
 # rainfall_file --- netCDF файл с информацией об осадках
 # pressure_file --- netCDF файл с информацией о давлении
@@ -132,9 +132,9 @@ def prepare_data(csv_path, rainfall_file, pressure_file, maxtmp_file, tmp_file, 
             # Теперь записываем в массив только месяц и день (без года)
             clipped_time.append(str_date[5:10])
         clipped_time = np.array(clipped_time)
-        # Ищем в массиве индексы тех элементов, которые соответствуют 30го июня
+        # Ищем в массиве индексы тех элементов, которые соответствуют 1-му января
         threshold_id_1_Jan = np.ravel(np.argwhere(clipped_time == '01-01'))
-        # А также индексы элементов 1го января
+        # А также индексы элементов 31го декабря
         threshold_id_31_Dec = np.ravel(np.argwhere(clipped_time == '12-31'))
 
         # Читаем матрицы в Dask массив
@@ -157,7 +157,7 @@ def prepare_data(csv_path, rainfall_file, pressure_file, maxtmp_file, tmp_file, 
             print('Calculations for ', time_series[threshold_id_1_Jan[i]], ' till ', time_series[threshold_id_1_Jan[i+1]])
             print('Year -', str(years_series[i])[:4])
 
-            # Для конкретного года получаем значения нужных нам параметров
+            # Для конкретного года получаем значения нужных нам параметров, в данном случае - с 1го января по 31е декабря
             local_rainfall_tensor = tensor_rainfall[threshold_id_1_Jan[i]: threshold_id_1_Jan[i+1], 110:450, :630].compute()
             local_pressure_tensor = tensor_pressure[threshold_id_1_Jan[i]: threshold_id_1_Jan[i+1], 110:450, :630].compute()
             local_maxtmp_tensor = tensor_maxtmp[threshold_id_1_Jan[i]: threshold_id_1_Jan[i+1], 110:450, :630].compute()

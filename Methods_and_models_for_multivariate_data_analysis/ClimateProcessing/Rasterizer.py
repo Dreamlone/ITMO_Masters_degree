@@ -3,6 +3,9 @@ import rasterio
 from rasterio import features
 
 # Функция перевода векторных слоев в растровый формат
+# world  --- векторный файл с границами государств
+# rst_fn --- растр с пространственной привязкой, который служит образцом
+# out_fn --- путь, куда требуется сохранить результат
 def rasterize(world, rst_fn, out_fn):
     rst = rasterio.open(rst_fn)
     meta = rst.meta.copy()

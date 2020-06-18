@@ -6,8 +6,12 @@ from netCDF4 import Dataset
 import shutil
 import dask.array as da
 
-# path        --- папка, в которой необходимо производить всю обработку
-# matrix_name --- название NetCDF файла, для которого следует получить информацию
+########################################################################################################################
+#           Функция для приведения ежедневных данных с климатическими параметрами в полугодовые агрегаты               #
+#                                                                                                                      #
+########################################################################################################################
+# path           --- папка, в которой необходимо производить всю обработку
+# matrix_name    --- название NetCDF файла, для которого следует получить информацию
 # calculate_days --- необходимо ли считать дни с определенным значением параметра или нет
 def transform_grid(path, matrix_name, calculate_days = False):
 
@@ -289,16 +293,3 @@ def save_netCDF(tensor, timesteps, save_path, countries_tif, land_tif):
 #save_netCDF(transformed_matrix, timesteps, '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Processed_grid/Temperature_min.nc',
 #            countries_tif = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/Country_bounds.tif',
 #            land_tif = '/media/mikhail/Data/ITMO/Reanalysis_grid_Europe/LandMatrix.tif')
-
-
-
-
-
-
-
-
-
-
-
-
-
